@@ -8,7 +8,7 @@
 Summary:	%{_pearname} - user authentication and permission management framework
 Name:		php-pear-%{_pearname}
 Version:	0.3.9
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
@@ -47,16 +47,17 @@ rm -rf %{buildroot}
 
 install -d %{buildroot}%{_datadir}/pear/%{_class}
 
-install -d %{buildroot}%{_datadir}/pear/%{_class}/Auth/Storage
-install -d %{buildroot}%{_datadir}/pear/%{_class}/Perm/Storage
-install -d %{buildroot}%{_datadir}/pear/%{_class}/Storage
+install -d %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Auth/Storage
+install -d %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Perm/Storage
+install -d %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Storage
 
-install -m0644 %{_pearname}-%{version}/*.php %{buildroot}%{_datadir}/pear/%{_class}
-install -m0644 %{_pearname}-%{version}/Auth/*.php %{buildroot}%{_datadir}/pear/%{_class}/Auth/
-install -m0644 %{_pearname}-%{version}/Auth/Storage/*.php %{buildroot}%{_datadir}/pear/%{_class}/Auth/Storage/
-install -m0644 %{_pearname}-%{version}/Perm/*.php %{buildroot}%{_datadir}/pear/%{_class}/Perm/
-install -m0644 %{_pearname}-%{version}/Perm/Storage/*.php %{buildroot}%{_datadir}/pear/%{_class}/Perm/Storage/
-install -m0644 %{_pearname}-%{version}/Storage/*.php %{buildroot}%{_datadir}/pear/%{_class}/Storage/
+install -m0644 %{_pearname}-%{version}/Admin.php %{buildroot}%{_datadir}/pear/%{_class}
+install -m0644 %{_pearname}-%{version}/Auth/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Auth/
+install -m0644 %{_pearname}-%{version}/Auth/Storage/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Auth/Storage/
+install -m0644 %{_pearname}-%{version}/Perm/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Perm/
+install -m0644 %{_pearname}-%{version}/Perm/Storage/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Perm/Storage/
+install -m0644 %{_pearname}-%{version}/Storage/*.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/Storage/
+install -m0644 %{_pearname}-%{version}/Storage.php %{buildroot}%{_datadir}/pear/%{_class}/%{_subclass}/
 
 install -d %{buildroot}%{_datadir}/pear/packages
 install -m0644 package.xml %{buildroot}%{_datadir}/pear/packages/%{_pearname}.xml
@@ -86,17 +87,16 @@ rm -rf %{buildroot}
 %files
 %defattr(644,root,root,755)
 %doc %{_pearname}-%{version}/docs/examples/* %{_pearname}-%{version}/*.txt
-%dir %{_datadir}/pear/%{_class}/Auth
-%dir %{_datadir}/pear/%{_class}/Auth/Storage
-%dir %{_datadir}/pear/%{_class}/Perm
-%dir %{_datadir}/pear/%{_class}/Perm/Storage
-%dir %{_datadir}/pear/%{_class}/Storage
-%{_datadir}/pear/%{_class}/Auth/*.php
-%{_datadir}/pear/%{_class}/Auth/Storage/*.php
-%{_datadir}/pear/%{_class}/Perm/*.php
-%{_datadir}/pear/%{_class}/Perm/Storage/*.php
-%{_datadir}/pear/%{_class}/Storage/*.php
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Auth
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Auth/Storage
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Perm
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Perm/Storage
+%dir %{_datadir}/pear/%{_class}/%{_subclass}/Storage
+%{_datadir}/pear/%{_class}/%{_subclass}/Auth/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/Auth/Storage/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/Perm/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/Perm/Storage/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/Storage/*.php
+%{_datadir}/pear/%{_class}/%{_subclass}/*.php
 %{_datadir}/pear/%{_class}/*.php
 %{_datadir}/pear/packages/%{_pearname}.xml
-
-
