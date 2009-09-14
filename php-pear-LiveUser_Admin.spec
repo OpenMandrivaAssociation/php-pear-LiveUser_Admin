@@ -8,7 +8,7 @@
 Summary:	%{_pearname} - user authentication and permission management framework
 Name:		php-pear-%{_pearname}
 Version:	0.3.9
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tar.bz2
