@@ -6,7 +6,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.3.9
-Release:	%mkrel 7
+Release:	%mkrel 8
 Summary:	User authentication and permission management framework
 License:	PHP License
 Group:		Development/PHP
