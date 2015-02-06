@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.3.9
-Release:	10
+Release:	11
 Summary:	User authentication and permission management framework
 License:	PHP License
 Group:		Development/PHP
